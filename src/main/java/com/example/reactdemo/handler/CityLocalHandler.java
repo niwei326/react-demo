@@ -8,11 +8,11 @@ import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 @Component
-public class CityHandler {
+public class CityLocalHandler {
     private final CityLocalRepository cityLocalRepository;
 
     @Autowired
-    public CityHandler(CityLocalRepository cityLocalRepository) {
+    public CityLocalHandler(CityLocalRepository cityLocalRepository) {
         this.cityLocalRepository = cityLocalRepository;
     }
 

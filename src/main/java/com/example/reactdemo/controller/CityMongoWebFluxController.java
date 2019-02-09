@@ -1,17 +1,17 @@
 package com.example.reactdemo.controller;
 import com.example.reactdemo.domain.City;
-import com.example.reactdemo.handler.CityHandler;
+import com.example.reactdemo.handler.CityMongoHandler;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 @RestController
-@RequestMapping(value = "/city")
-public class CityWebFluxController {
+@RequestMapping(value = "/city/mongo")
+public class CityMongoWebFluxController {
 
     @Autowired
-    private CityHandler cityHandler;
+    private CityMongoHandler cityHandler;
 
     @GetMapping(value = "/{id}")
     public Mono<City> findCityById(@PathVariable("id") Long id) {
@@ -24,12 +24,12 @@ public class CityWebFluxController {
     }
 
     @PostMapping()
-    public Mono<Long> saveCity(@RequestBody City city) {
+    public Mono<City> saveCity(@RequestBody City city) {
         return cityHandler.save(city);
     }
 
     @PutMapping()
-    public Mono<Long> modifyCity(@RequestBody City city) {
+    public Mono<City> modifyCity(@RequestBody City city) {
         return cityHandler.modifyCity(city);
     }
 

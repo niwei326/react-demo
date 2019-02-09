@@ -9,7 +9,7 @@ import java.util.concurrent.ConcurrentMap;
 import java.util.concurrent.atomic.AtomicLong;
 
 @Repository
-public class CityRepository {
+public class CityLocalRepository {
 
     private ConcurrentMap<Long, City> repository = new ConcurrentHashMap<>();
 
